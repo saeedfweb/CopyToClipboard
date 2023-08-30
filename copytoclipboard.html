@@ -4,5 +4,16 @@
     <div id="sample">Hello World</div>
     <p id="sample">Hello World</p>
     <a href="#" onclick="CopyToClipboard('sample');return false;">Copy Text</a>
+    <script>
+function CopyToClipboard(id)
+{
+var r = document.createRange();
+r.selectNode(document.getElementById(id));
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(r);
+document.execCommand('copy');
+window.getSelection().removeAllRanges();
+}
+</script>
   </body>
 </html>
